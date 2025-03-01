@@ -44,7 +44,13 @@ class Title extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center, // Căn giữa Row
       children: [
-        Image.asset('assets/images/login_screen/Vector.png'),
+        GestureDetector(
+          onTap: () {
+            // Quay lại trang trước khi nhấn vào hình ảnh
+            Navigator.pop(context);
+          },
+          child: Image.asset('assets/images/login_screen/Vector.png'),
+        ),
         const Expanded(
           // Sử dụng Expanded để căn giữa phần chữ
           child: Align(
