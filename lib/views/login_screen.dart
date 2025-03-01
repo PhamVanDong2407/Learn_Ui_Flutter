@@ -21,6 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 20),
               welcomeText(),
               SizedBox(height: 40),
+              textForm(),
             ],
           ),
         ),
@@ -93,11 +94,19 @@ class textForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Emai or Mobile Number'),
-
+        Text('Email or Mobile Number'),
+        TextField(
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            hintText: 'Enter your emmail or mobile number',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        Text('Password'),
       ],
     );
   }
 }
-
