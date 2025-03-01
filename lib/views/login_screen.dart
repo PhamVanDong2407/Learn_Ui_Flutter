@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medicalhealth/views/setpassword_screen.dart';
+import 'package:medicalhealth/views/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -76,25 +78,16 @@ class welcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return const Row(
       children: [
         Text(
-          'Welcome',
+          'Welcome Back!',
           style: TextStyle(
             color: Color(0xff2260FF),
             fontWeight: FontWeight.w600,
             fontSize: 24,
           ),
         ),
-        Text(
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do'
-          ' eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-          style: TextStyle(
-            fontSize: 12,
-          ),
-        )
       ],
     );
   }
@@ -189,7 +182,14 @@ class btnForgetPassword extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute<void>(
+                builder: (BuildContext context) => const SetpasswordScreen(),
+              ),
+            );
+          },
           child: const Text(
             'Forget Password',
             style: TextStyle(
@@ -215,7 +215,7 @@ class btnLogin extends StatelessWidget {
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xff2260FF),
-            minimumSize: const Size(250, 50), // Đặt chiều rộng và chiều cao của button
+            minimumSize: const Size(350, 50), // Đặt chiều rộng và chiều cao của button
           ),
           child: const Text(
             'Log In',
@@ -276,7 +276,14 @@ class btnLogin extends StatelessWidget {
           children: [
             const Text("Don't have  an account?"),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const SignupScreen(),
+                  ),
+                );
+              },
               child: const Text(
                 ' Sign Up',
                 style: TextStyle(
